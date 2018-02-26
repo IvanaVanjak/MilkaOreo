@@ -36,6 +36,10 @@ namespace MilkaOreo
             this.Filter = Convert.ToInt16(this.SgtinBin.Substring(8, 3));
 
             this.partition = Convert.ToInt16(this.SgtinBin.Substring(11, 3), 2);
+            if (this.partition > 6)
+            {
+                return false;
+            }
 
             PartitionValueData partitionValueData = PartitionDefinition[this.partition];
 
